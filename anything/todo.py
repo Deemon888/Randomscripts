@@ -13,3 +13,5 @@ if listItem == "":
     listItem = input("What do you want to add to your list: ")
 elif listItem != "":
     todolist.append(listItem)  
+
+# we can use functions too
