@@ -45,7 +45,7 @@
 	let bot_choice = bot_choices[Math.floor(Math.random() * bot_choices.length)]
 	
 	prps.addEventListener('keypress', function(event) {
-		if (event.key == "Enter") {
+		if (event.key == "Enter" && prps != "") {
 			if (
 				prps.value == 'R' ||
 				prps.value == 'rock' ||
