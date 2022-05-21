@@ -1,106 +1,132 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			RPS demo
-		</title>
-		<style>
-			body {
-				text-align:center;
-			}
-			
-			#heading1 {
-				display:none;
-			}
-			
-			#heading1ex {
-				display:none;
-			}
-			
-			#playerinupt {
-				display:none;
-			}
-		</style>
-	</head>
-	<body>
-		<h1 id="heading1">
-			RPS <h6 id="heading1ex"> you go first </h6>
-		</h1>
-		<input id="playerinput">
-		<h1 id="heading2">
-		</h1>
-	</body>
+  <head>
+    <title>RPS demo</title>
+    <style>
+      body {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #heading1 {
+        display: none;
+      }
+
+      #playerinupt {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading1">
+      RPS
+      <h6>you go first</h6>
+    </h1>
+    <input id="playerinput" />
+    <h1 id="heading2"></h1>
+  </body>
 </html>
 <script>
-	let h1 = document.getElementById("heading1")
-	let h2 = document.getElementById("heading2")
-	let h1ex = document.getElementById("heading1ex")
-	let prps = document.getElementById("playerinput")
-	let username = window.prompt("enter your username")
-	// vars
-	
-	setTimeout (() => {
-		h1.style.display = "block"
-	}, 1000)
-	setTimeout (() => {
-		h1ex.style.display = "block"
-	}, 1000)
-	setTimeout (() => {
-		input.style.display = "block"
-	}, 1000)
-	
-	let bot_choices = [ 'rock', 'paper', 'sissors' ]
-	let bot_choice = bot_choices[Math.floor(Math.random() * bot_choices.length)]
-	
-	prps.addEventListener('keypress', function(event) {
-		if (event.key == "Enter" && prps.value != "") {
-			if (
-				prps.value == 'R' ||
-				prps.value == 'rock' ||
-				prps.value == 'r' ||
-				prps.value == 'Rock' ||
-				prps.value == 'rk' ||
-				prps.value == 'Rk' ||
-				prps.value == 'rok' ||
-				prps.value == 'Rok'
-				) {
-				let rock = 'yes'
-			} else if (
-				prps.value == "Sissors" ||
-				prps.value == "sissors" ||
-				prps.value == "sissor" ||
-				prps.value == "Sissor" ||
-				prps.value == "Siss" ||
-				prps.value == "siss" ||
-				prps.value == "si" ||
-				prps.value == "Si" ||
-				prps.value == "s" ||
-				prps.value == "S" ||
-				prps.value == "Srs" ||
-				prps.value == "srs" 
-			) {
-				let sissors = 'yes'
-			} else if (
-				prps.value == "Paper" ||
-				prps.value == "paper" ||
-				prps.value == "ppr" ||
-				prps.value == "Ppr" ||
-				prps.value == "pr" ||
-				prps.value == "Pr" ||
-				prps.value == "p" ||
-				prps.value == "P" 
-			) {
-				let paper = 'yes'
-			} else {
-				alert('error: pick rock, paper or sissors!')
-			}
-			if (rock === 'yes' && bot_choice === 'rock') {
-				h2.innerHTML = "Tie!"
-			} else if (rock === 'yes' && bot_choice === 'paper') {
-				h2.innerHTML = "Bot wins!"
-			} else if (rock === 'yes' && bot_choice === 'sissors') {
-				h2.innerHTML = "You win!"
-			}
-		}
-	})
+  let h1 = document.getElementById("heading1");
+  let h2 = document.getElementById("heading2");
+  let prps = document.getElementById("playerinput");
+  let username = window.prompt("enter your username");
+  // vars
+
+  setTimeout(() => {
+    h1.style.display = "block";
+  }, 1000);
+  setTimeout(() => {
+    prps.style.display = "block";
+  }, 1000);
+
+  let bot_choices = ["r", "p", "s"];
+
+  let user_choice = "";
+  let bot_choice = "";
+
+  prps.addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+      if (
+        prps.value == "R" ||
+        prps.value == "rock" ||
+        prps.value == "r" ||
+        prps.value == "Rock" ||
+        prps.value == "rk" ||
+        prps.value == "Rk" ||
+        prps.value == "rok" ||
+        prps.value == "Rok"
+      ) {
+        user_choice = "r";
+        bot_choice =
+          bot_choices[Math.floor(Math.random() * bot_choices.length)];
+        game(user_choice, bot_choice);
+      } else if (
+        prps.value == "Sissors" ||
+        prps.value == "sissors" ||
+        prps.value == "sissor" ||
+        prps.value == "Sissor" ||
+        prps.value == "Siss" ||
+        prps.value == "siss" ||
+        prps.value == "si" ||
+        prps.value == "Si" ||
+        prps.value == "s" ||
+        prps.value == "S" ||
+        prps.value == "Srs" ||
+        prps.value == "srs"
+      ) {
+        user_choice = "s";
+        bot_choice =
+          bot_choices[Math.floor(Math.random() * bot_choices.length)];
+        game(user_choice, bot_choice);
+      } else if (
+        prps.value == "Paper" ||
+        prps.value == "paper" ||
+        prps.value == "ppr" ||
+        prps.value == "Ppr" ||
+        prps.value == "pr" ||
+        prps.value == "Pr" ||
+        prps.value == "p" ||
+        prps.value == "P"
+      ) {
+        user_choice = "p";
+        bot_choice =
+          bot_choices[Math.floor(Math.random() * bot_choices.length)];
+        game(user_choice, bot_choice);
+      } else {
+        alert("error: pick rock(R), paper(P) or sissors(S!");
+      }
+    }
+  });
+
+  function game(choice, bot) {
+    if (
+      (choice == "r" && bot == "s") ||
+      (choice == "p" && bot == "r") ||
+      (choice == "s" && bot == "p")
+    ) {
+      console.log(choice, bot);
+      h2.innerHTML = "User wins";
+      h2.style.display = "block";
+    } else if (
+      (choice == "s" && bot == "r") ||
+      (choice == "r" && bot == "p") ||
+      (choice == "p" && bot == "s")
+    ) {
+      console.log(choice, bot);
+      h2.innerHTML = "Comp wins";
+      h2.style.display = "block";
+    } else if (
+      (choice == "r" && bot == "r") ||
+      (choice == "p" && bot == "p") ||
+      (choice == "s" && bot == "s")
+    ) {
+      console.log(choice, bot);
+      h2.innerHTML = "It's a tie";
+      h2.style.display = "block";
+    }
+  }
 </script>
