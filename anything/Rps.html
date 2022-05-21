@@ -13,6 +13,10 @@
 				display:none;
 			}
 			
+			#heading1ex {
+				display:none;
+			}
+			
 			#playerinupt {
 				display:none;
 			}
@@ -20,7 +24,7 @@
 	</head>
 	<body>
 		<h1 id="heading1">
-			RPS <h6> you go first </h6>
+			RPS <h6 id="heading1ex"> you go first </h6>
 		</h1>
 		<input id="playerinput">
 		<h1 id="heading2">
@@ -30,12 +34,16 @@
 <script>
 	let h1 = document.getElementById("heading1")
 	let h2 = document.getElementById("heading2")
+	let h1ex = document.getElementById("heading1ex")
 	let prps = document.getElementById("playerinput")
 	let username = window.prompt("enter your username")
 	// vars
 	
 	setTimeout (() => {
-		h.style.display = "block"
+		h1.style.display = "block"
+	}, 1000)
+	setTimeout (() => {
+		h1ex.style.display = "block"
 	}, 1000)
 	setTimeout (() => {
 		input.style.display = "block"
