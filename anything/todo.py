@@ -27,3 +27,7 @@ print('done')
 #hashing#
 
 # dont think this will work bc its a list ans not a sring but will try...
+
+with open(list.txt", 'w') as items:
+# im sry if i messed this up ;-;
+  items.write("theshits") 
