@@ -4,5 +4,12 @@ import time
 
 os.system('clear')
 
-todolist = ['shut my mouth', 'read a book', 'play geomatry dash', 'go to bed']
+todolist = []
 print('to-do list: ' + str(todolist))
+
+listItem = input("What do you want to add to your list: ")
+
+if listItem == "":
+    listItem = input("What do you want to add to your list: ")
+elif listItem != "":
+    todolist.append(listItem)  
