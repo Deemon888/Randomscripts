@@ -30,4 +30,4 @@ print('done')
 
 with open(list.txt", 'w') as items:
 # im sry if i messed this up ;-;
-  items.write("list?") 
+  items.write(listItem) 
