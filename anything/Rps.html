@@ -23,7 +23,6 @@
   <body>
     <h1 id="heading1">
       RPS
-      <h6>you go first</h6>
     </h1>
     <input id="playerinput" />
     <h1 id="heading2"></h1>
@@ -43,7 +42,7 @@
     prps.style.display = "block";
   }, 1000);
 
-  let bot_choices = ["r", "p", "s"];
+  let bot_choices = ["rock", "paper", "sissors"];
 
   let user_choice = "";
   let bot_choice = "";
@@ -60,7 +59,7 @@
         prps.value == "rok" ||
         prps.value == "Rok"
       ) {
-        user_choice = "r";
+        user_choice = "rock";
         bot_choice =
           bot_choices[Math.floor(Math.random() * bot_choices.length)];
         game(user_choice, bot_choice);
@@ -78,7 +77,7 @@
         prps.value == "Srs" ||
         prps.value == "srs"
       ) {
-        user_choice = "s";
+        user_choice = "sissors";
         bot_choice =
           bot_choices[Math.floor(Math.random() * bot_choices.length)];
         game(user_choice, bot_choice);
@@ -92,7 +91,7 @@
         prps.value == "p" ||
         prps.value == "P"
       ) {
-        user_choice = "p";
+        user_choice = "paper";
         bot_choice =
           bot_choices[Math.floor(Math.random() * bot_choices.length)];
         game(user_choice, bot_choice);
@@ -104,25 +103,25 @@
 
   function game(choice, bot) {
     if (
-      (choice == "r" && bot == "s") ||
-      (choice == "p" && bot == "r") ||
-      (choice == "s" && bot == "p")
+      (choice == "rock" && bot == "sissors") ||
+      (choice == "paper" && bot == "rock") ||
+      (choice == "sissors" && bot == "paper")
     ) {
       console.log(choice, bot);
-      h2.innerHTML = "User wins";
+      h2.innerHTML = "User wins against " + bot;
       h2.style.display = "block";
     } else if (
-      (choice == "s" && bot == "r") ||
-      (choice == "r" && bot == "p") ||
-      (choice == "p" && bot == "s")
+      (choice == "sissors" && bot == "rock") ||
+      (choice == "rock" && bot == "paper") ||
+      (choice == "paper" && bot == "sissors")
     ) {
       console.log(choice, bot);
-      h2.innerHTML = "Comp wins";
+      h2.innerHTML = "Comp wins against " + choice;
       h2.style.display = "block";
     } else if (
-      (choice == "r" && bot == "r") ||
-      (choice == "p" && bot == "p") ||
-      (choice == "s" && bot == "s")
+      (choice == "rock" && bot == "rock") ||
+      (choice == "paper" && bot == "paper") ||
+      (choice == "sissors" && bot == "sissors")
     ) {
       console.log(choice, bot);
       h2.innerHTML = "It's a tie";
