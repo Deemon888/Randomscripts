@@ -39,10 +39,12 @@ exit
 elif [[ -z "$eqs" ]]; then
 echo "error: var 'eqs' is empty"
 exit
-else
-sleep 0
 fi
 
+if [[ -z $no1 && -z $no2 ]]; then
+echo "error"
+exit
+fi
 A=$(( no1 "$eqs" no2))
 echo -e "$no1 $eqs $no2 = $A\n"
 done
