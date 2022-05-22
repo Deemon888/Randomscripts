@@ -72,10 +72,10 @@ def check_cmd(cmd):
     if cmd == "help":
         listhelp()
     elif cmd == "todolist" or cmd == "1":
-		todolist()
+	todolist()
     elif cmd == "addtolist" or cmd == "2":
-		toadd = input('> ')
-		todolist.append(toadd)
+	toadd = input('> ')
+	todolist.append(toadd)
     elif cmd == "hashlist" or cmd == "3":
         hashlist()
     elif cmd == "resetlist" or cmd == "4":
@@ -125,4 +125,3 @@ user_avaliable(user)
 while True:
     prompt = input(user + ' >>> ')
     check_cmd(prompt)
-#.
