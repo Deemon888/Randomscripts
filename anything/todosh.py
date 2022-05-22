@@ -18,21 +18,14 @@ def help():
   addhashedlisttofile (6)
   hashmyinput (7)
   say (8)
-  dir? (9)""")
+  dir? (9)
+  """)
 
 
 def addtolist():
-	if prompt[1] == '[]':
 		toadd = input('> ')
 		todolist.append(toadd)
-	else:
-		quickadd = prompt[len(prompt) - 1]
-		if IndexError:
-			print('error')
-			pass
-		todolist.append(quickadd)
-
-
+		
 def todolist():
 	print(str(todolist))
 
@@ -43,10 +36,7 @@ def resetlist():
 
 def hashlist():
 	strtodolist = str(todolist)
-	if strtodolist == '[]':
-		print('[error]: nothing to hash')
-	else:
-		todolist_hashed = hl.md5(bytes(strtodolist, 'utf-8')).hexdigest()
+	todolist_hashed = hl.md5(bytes(strtodolist, 'utf-8')).hexdigest()
 	print(todolist_hashed + ' - hashed')
 
 
@@ -69,16 +59,8 @@ def hashmyinput():
 
 
 def say():
-	if prompt[1] == '[]':
-		tosay = input('> ')
-		print(tosay)
-	else:
-		qtosay = prompt[len(prompt) - 1]
-		if IndexError:
-			print('error')
-			pass
-		print(qtosay)
-
+	tosay = input('> ')
+	print(tosay)
 
 def dir_():
 	dir = os.system('pwd')
