@@ -6,9 +6,22 @@
 
 html,
 body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  background: #000;
+}
+
+input {
+  width: 250px;
+  padding: 4px;
+  margin: 10px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
 }
