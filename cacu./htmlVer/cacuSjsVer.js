@@ -41,15 +41,15 @@ function checkeq(opt) {
 b1.addEventListen('click', e => {
 	checkeq(opc)
 	if (madd === True) {
-		h1.innerText = x + ' + ' + y + ' = ' add
+		h1.innerText = x + ' + ' + y + ' = ' + add
 	} else if (msub === True) {
-		h1.innerText = x + ' - ' + y + ' = ' sub
+		h1.innerText = x + ' - ' + y + ' = ' + sub
 	} else if (mdiv === True) {
-		h1.innerText = x + ' / ' + y + ' = ' div
+		h1.innerText = x + ' / ' + y + ' = ' + div
 	} else if (mmul === True) {
-		h1.innerText = x + ' x ' + y + ' = ' mul
+		h1.innerText = x + ' x ' + y + ' = ' + mul
 	} else if (mtap === True) {
-		h1.innerText = x + ' ** ' + y + ' = ' tap
+		h1.innerText = x + ' ** ' + y + ' = ' + tap
 	}
 })
 // button
