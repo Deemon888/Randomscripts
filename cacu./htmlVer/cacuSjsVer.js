@@ -3,4 +3,4 @@ let no1 = document.getElementById('no1')
 let no2 = document.getElementById('no2')
 // main vars
 
-let b1 = document.getElementById('')
+let b1 = document.getElementById('button1')
