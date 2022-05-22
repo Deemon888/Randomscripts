@@ -80,76 +80,9 @@ def say():
 		print(qtosay)
 
 
-def dir_():
+def dirr():
 	dir = os.system('pwd')
 	print(dir)
-
-
-# getting input and shit
-def get_input():
-    inp = input("Command: ")
-    check_cmd(inp)
-
-
-def check_cmd(cmd):
-    cmd_inp = cmd.lower()
-    if cmd_inp == "help":
-        help()
-        get_input()
-    elif cmd_inp == "todolist" or cmd_inp == "1":
-        todolist()
-        get_input()
-    elif cmd_inp == "addtolist" or cmd_inp == "2":
-        addtolist()
-        get_input()
-    elif cmd_inp == "hashlist" or cmd_inp == "3":
-        hashlist()
-        get_input()
-    elif cmd_inp == "resetlist" or cmd_inp == "4":
-        resetlist()
-        get_input()
-    elif cmd_inp == "addlisttofile" or cmd_inp == "5":
-        addlisttofile()
-        get_input()
-    elif cmd_inp == "addhashedlisttofile" or cmd_inp == "6":
-        addhashedlisttofile()
-        get_input()
-    elif cmd_inp == "hashmyinput" or cmd_inp == "7":
-        hashmyinput()
-        get_input()
-    elif cmd_inp == "say" or cmd_inp == "8":
-        say()
-        get_input()
-    elif cmd_inp == "dir?" or cmd_inp == "dir" or cmd_inp == "9":
-        dir_()
-        get_input()
-    elif cmd_inp == "exit":
-        yn = input("Are you sure you want to exit? (y/n) ")
-        confirm(yn)
-    else:
-        yn = input("Invalid command... Do you want to exit? (y/n): ")
-        confirm(yn)
-
-
-def confirm(yn):
-    if yn != "":
-        res = yn.lower()
-        if res == "y" or res == "yes":
-            print("Hope to see you back soon")
-        elif res == "n" or res == "no":
-            get_input()
-    elif yn == "":
-        yn = input("Do you want to exit? (y/n): ")
-        confirm(yn)
-
-
-def user_avaliable(user):
-    if user == "":
-        print("You haven't provided a username...")
-        username = input('[user?]: ')
-        user_avaliable(username)
-    elif user != "":
-        print("Type 'help' to see the list of all cmds and type 'exit' if you wish to exit...")
-        get_input()
-
-user_avaliable(user)
+	
+while True:
+	prompt = input(user + ' >>> ').split() # this is where u add your style (make sure u keep the username tho)
