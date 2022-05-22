@@ -8,7 +8,7 @@ sys.tracebacklimit = -1
 todolist = []
 
 
-def help():
+def listhelp():
   print("""some commands are:\n
   todolist (1)
   addtolist (2) 
@@ -75,7 +75,7 @@ def get_input():
 
 def check_cmd(cmd):
     if cmd == "help":
-        help()
+        listhelp()
     elif cmd == "todolist" or cmd == "1":
         todolist()
     elif cmd == "addtolist" or cmd == "2":
@@ -97,6 +97,8 @@ def check_cmd(cmd):
     elif cmd == "exit":
         yn = input("Are you sure you want to exit? (y/n) ")
         confirm(yn)
+	elif cmd == '':
+		pass
     else:
         yn = input("Invalid command... Do you want to exit? (y/n): ")
         confirm(yn)
