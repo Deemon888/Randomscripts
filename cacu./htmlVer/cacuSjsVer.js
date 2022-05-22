@@ -48,6 +48,8 @@ b1.addEventListen('keypress', function event() {
 		h1.innerText = x + ' / ' + y + ' = ' div
 	} else if (mmul === True) {
 		h1.innerText = x + ' x ' + y + ' = ' mul
+	} else if (mtap === True) {
+		h1.innerText = x + ' ** ' + y + ' = ' tap
 	}
 })
 // button
