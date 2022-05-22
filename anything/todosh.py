@@ -74,8 +74,8 @@ def check_cmd(cmd):
     elif cmd == "todolist" or cmd == "1":
 	todolist()
     elif cmd == "addtolist" or cmd == "2":
-	toadd = input('> ')
-	todolist.append(toadd)
+		toadd = input('> ')
+		todolist.append(toadd)
     elif cmd == "hashlist" or cmd == "3":
         hashlist()
     elif cmd == "resetlist" or cmd == "4":
