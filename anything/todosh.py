@@ -69,7 +69,7 @@ def hashmyinput():
 
 
 def say():
-	if prompt[1] == '':
+	if prompt[1] == '[]':
 		tosay = input('> ')
 		print(tosay)
 	else:
@@ -80,9 +80,68 @@ def say():
 		print(qtosay)
 
 
-def dirr():
+def dir_():
 	dir = os.system('pwd')
 	print(dir)
-	
+
+
+# getting input and shit
+def get_input():
+    inp = input("Command: ")
+    check_cmd(inp)
+
+
+def check_cmd(cmd):
+    if cmd == "help":
+        help()
+    elif cmd == "todolist" or cmd == "1":
+        todolist()
+    elif cmd == "addtolist" or cmd == "2":
+        addtolist()
+    elif cmd == "hashlist" or cmd == "3":
+        hashlist()
+    elif cmd == "resetlist" or cmd == "4":
+        resetlist()
+    elif cmd == "addlisttofile" or cmd == "5":
+        addlisttofile()
+    elif cmd == "addhashedlisttofile" or cmd == "6":
+        addhashedlisttofile()
+    elif cmd == "hashmyinput" or cmd == "7":
+        hashmyinput()
+    elif cmd == "say" or cmd == "8":
+        say()
+    elif cmd == "dir?" or cmd == "dir" or cmd == "9":
+        dir_()
+    elif cmd == "exit":
+        yn = input("Are you sure you want to exit? (y/n) ")
+        confirm(yn)
+    else:
+        yn = input("Invalid command... Do you want to exit? (y/n): ")
+        confirm(yn)
+
+
+def confirm(yn):
+    if yn != "":
+        if yn == "y" or yn == "yes":
+            print("Hope to see you back soon")
+            exit()
+        elif yn == "n" or yn == "no":
+            print("Cancelled....")
+    elif yn == "":
+        yn = input("Do you want to exit? (y/n): ")
+        confirm(yn)
+
+
+def user_avaliable(user):
+    if user == "":
+        print("You haven't provided a username...")
+        username = input('[user?]: ')
+        user_avaliable(username)
+    elif user != "":
+        print("Type 'help' to see the list of all cmds and type 'exit' if you wish to exit...")
+
+user_avaliable(user)
+
 while True:
-	prompt = input(user + ' >>> ').split() # this is where u add your style (make sure u keep the username tho)
+    prompt = input(user + ' >>> ')
+    check_cmd(prompt)
