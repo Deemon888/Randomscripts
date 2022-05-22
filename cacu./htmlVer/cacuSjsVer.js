@@ -38,7 +38,7 @@ function checkeq(opt) {
 }
 // functions
 
-b1.addEventListen('keypress', function event() {
+b1.addEventListen('click', e => {
 	checkeq(opc)
 	if (madd === True) {
 		h1.innerText = x + ' + ' + y + ' = ' add
