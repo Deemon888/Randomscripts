@@ -98,7 +98,7 @@ def check_cmd(cmd):
         yn = input("Are you sure you want to exit? (y/n) ")
         confirm(yn)
     elif cmd == '':
-		pass
+	pass
     else:
         yn = input("Invalid command... Do you want to exit? (y/n): ")
         confirm(yn)
