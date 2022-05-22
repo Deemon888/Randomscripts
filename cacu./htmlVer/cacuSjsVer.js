@@ -4,3 +4,4 @@ let no2 = document.getElementById('no2')
 // main vars
 
 let b1 = document.getElementById('button1')
+let opts = document.getElementById('operations')
