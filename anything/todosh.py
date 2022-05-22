@@ -72,7 +72,7 @@ def check_cmd(cmd):
     if cmd == "help":
         listhelp()
     elif cmd == "todolist" or cmd == "1":
-	todolist()
+		todolist()
     elif cmd == "addtolist" or cmd == "2":
 		toadd = input('> ')
 		todolist.append(toadd)
