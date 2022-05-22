@@ -3,7 +3,7 @@ import time
 import hashlib as hl
 import sys
 
-user = os.system('echo "$USER"')
+user = input('[user?]: ')
 sys.tracebacklimit = -1
 todolist = []
 
