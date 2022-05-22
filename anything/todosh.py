@@ -129,3 +129,4 @@ user_avaliable(user)
 while True:
     prompt = input(user + ' >>> ')
     check_cmd(prompt)
+#
