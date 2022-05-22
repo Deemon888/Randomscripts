@@ -27,7 +27,6 @@ def addtolist():
 		quickadd = prompt[len(prompt) - 1]
 		if IndexError:
 			print('error')
-			continue
 			pass
 		todolist.append(quickadd)
 		
@@ -68,10 +67,9 @@ def say():
 		qtosay = prompt[len(prompt) - 1]
 		if IndexError:
 			print('error')
-			continue
 			pass
 		print(qtosay)
 		
-def dir?():
+def dirr():
 	dir = os.system('pwd')
 	print(dir)
