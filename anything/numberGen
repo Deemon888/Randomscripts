@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Random Number Generator</title>
+    </head>
+
+    <body>
+        <nav>
+            <h1>Random Number Generator</h1>
+        </nav>
+
+        <div id="cont">
+            <div id="display">
+                <p id="displayval">0</>
+            </div>
+            <div id="inputcont">
+                <input id="numgen" type="number">
+            </div>
+            <div id="btncont">
+                <button id="generate">Generate</button>
+            </div>
+        </div>
+    </body>
+</html>
