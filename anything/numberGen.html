@@ -15,6 +15,24 @@
                 align-items: center;
                 justify-content: center;
             }
+
+            nav {
+                text-align: center;
+            }
+
+            #cont {}
+
+            #display {}
+
+            #displayval {}
+
+            #inputcont {}
+
+            #numlimit {}
+
+            #btncont {}
+
+            #generate {}
         </style>
     </head>
 
@@ -28,14 +46,27 @@
                 <p id="displayval">0</>
             </div>
             <div id="inputcont">
-                <input id="numgen" type="number">
+                <input id="numlimit" type="number">
             </div>
             <div id="btncont">
                 <button id="generate">Generate</button>
             </div>
         </div>
         <script>
-            console.log("I don't have motivation right now")
-        </script>
+            console.log("I don't have motivation right now");
+            const genbtn = document.getElementById("generate");
+            const valdisplay = document.getElementById("displayval");
+            const limit = document.getElementById("numlimit");
+            
+            genbtn.addEventListener("click", () => {
+                if(limit.value == "") {
+                    number = Math.floor(Math.random() * 100000)
+                    valdisplay.innerHTML = `${number}`
+                }
+                else {
+                    number = Math.floor(Math.random() * limit.value)
+                    valdisplay.innerHTML = `${number}`
+                }
+            });
     </body>
 </html>
